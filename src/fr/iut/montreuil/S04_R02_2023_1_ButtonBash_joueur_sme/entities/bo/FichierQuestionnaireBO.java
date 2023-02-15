@@ -3,13 +3,11 @@ package fr.iut.montreuil.S04_R02_2023_1_ButtonBash_joueur_sme.entities.bo;
 import com.opencsv.CSVReader;
 
 import java.io.FileReader;
-import java.nio.file.Path;
 
 public class FichierQuestionnaireBO {
     private String nomFichier; // files must be placed in src/fr/iut/montreuil/S04_R02_2023_1_ButtonBash_joueur_sme/resources
 
     public FichierQuestionnaireBO(String nomFichier) {
-        // TODO Auto-generated constructor stub
         this.nomFichier = nomFichier;
         try {
             CSVReader reader = new CSVReader(new FileReader("src/fr/iut/montreuil/S04_R02_2023_1_ButtonBash_joueur_sme/resources/" + nomFichier));
