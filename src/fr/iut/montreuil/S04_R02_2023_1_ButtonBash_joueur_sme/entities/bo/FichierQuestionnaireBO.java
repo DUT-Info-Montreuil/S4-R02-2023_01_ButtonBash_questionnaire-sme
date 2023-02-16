@@ -30,8 +30,11 @@ public class FichierQuestionnaireBO {
         }
     }
 
+    public String getNomFichier() {
+        return nomFichier;
+    }
 
-    public static void main(String[] args) {
-        FichierQuestionnaireBO fichierQuestionnaireBO = new FichierQuestionnaireBO("questionsQuizz_V1.1.csv");
+    public ArrayList<String[]> getRawQuestions() {
+        return rawQuestions;
     }
 }
