@@ -1,6 +1,6 @@
-package fr.iut.montreuil.S04_R02_2023_1_ButtonBash_joueur_sme.entities.dto;
+package fr.iut.montreuil.S04_R02_2023_1_ButtonBash_questionnaire_sme.service.entities.dto;
 
-import fr.iut.montreuil.S04_R02_2023_1_ButtonBash_joueur_sme.entities.bo.FichierQuestionnaireBO;
+import fr.iut.montreuil.S04_R02_2023_1_ButtonBash_questionnaire_sme.service.entities.bo.FichierQuestionnaireBO;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package fr.iut.montreuil.S04_R02_2023_1_ButtonBash_joueur_sme.entities.bo;
+package fr.iut.montreuil.S04_R02_2023_1_ButtonBash_questionnaire_sme.service.entities.bo;
 
 import com.opencsv.CSVReader;
 
@@ -13,7 +13,7 @@ public class FichierQuestionnaireBO {
         this.nomFichier = nomFichier;
 
         try {
-            CSVReader reader = new CSVReader(new FileReader("src/fr/iut/montreuil/S04_R02_2023_1_ButtonBash_joueur_sme/resources/" + nomFichier));
+            CSVReader reader = new CSVReader(new FileReader("src/fr/iut/montreuil/S04_R02_2023_1_ButtonBash_questionnaire_sme/service/resources/" + nomFichier));
             String[] nextLine;
             while ((nextLine = reader.readNext()) != null) {
                 // nextLine[] is an array of values from the line
@@ -36,5 +36,9 @@ public class FichierQuestionnaireBO {
 
     public ArrayList<String[]> getRawQuestions() {
         return rawQuestions;
+    }
+
+    public static void main(String[] args) {
+        new FichierQuestionnaireBO("questionsQuizz_V1.1.csv");
     }
 }
