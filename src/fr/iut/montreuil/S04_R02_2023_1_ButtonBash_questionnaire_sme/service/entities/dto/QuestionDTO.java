@@ -13,4 +13,14 @@ public class QuestionDTO {
         this.texte=tab[3];
         this.reponse=tab[4];
     }
+
+    @Override
+    public String toString() {
+        return "QuestionDTO{" +
+                "numero=" + numero +
+                ", langue='" + langue + '\'' +
+                ", texte='" + texte + '\'' +
+                ", reponse='" + reponse + '\'' +
+                '}';
+    }
 }
