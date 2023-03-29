@@ -55,12 +55,28 @@ public class ServiceQuiz implements IServiceQuiz, StatQuiz {
     }
 
     @Override
-    public int bestAnswered(int questionnaire) {
-        return 0;
+    public QuestionDTO bestAnswered(int questionnaire) {
+        QuestionDTO rep;
+        for(QuestionnaireDTO questionnaires : this.fournirListeQuestionnaire()){
+            for (QuestionDTO questions : questionnaires.getQuestions()){
+                if (questions.getGoodAnswer()/questions.getAnsweredCount()> rep.getGoodAnswer()/rep.getAnsweredCount()){
+                    rep=questions;
+                }
+            }
+        }
+        return rep;
     }
 
     @Override
-    public int worstAnswered(int questionnaire) {
-        return 0;
+    public QuestionDTO worstAnswered(int questionnaire) {
+        QuestionDTO rep;
+        for(QuestionnaireDTO questionnaires : this.fournirListeQuestionnaire()){
+            for (QuestionDTO questions : questionnaires.getQuestions()){
+                if (questions.getGoodAnswer()/questions.getAnsweredCount()< rep.getGoodAnswer()/rep.getAnsweredCount()){
+                    rep=questions;
+                }
+            }
+        }
+        return rep;
     }
 }
