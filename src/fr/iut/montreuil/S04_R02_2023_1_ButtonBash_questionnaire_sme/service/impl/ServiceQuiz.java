@@ -4,10 +4,11 @@ import fr.iut.montreuil.S04_R02_2023_1_ButtonBash_questionnaire_sme.service.enti
 import fr.iut.montreuil.S04_R02_2023_1_ButtonBash_questionnaire_sme.service.entities.dto.QuestionDTO;
 import fr.iut.montreuil.S04_R02_2023_1_ButtonBash_questionnaire_sme.service.entities.dto.QuestionnaireDTO;
 import fr.iut.montreuil.S04_R02_2023_1_ButtonBash_questionnaire_sme.service.model.IServiceQuiz;
+import fr.iut.montreuil.S04_R02_2023_1_ButtonBash_questionnaire_sme.service.model.StatQuiz;
 
 import java.util.ArrayList;
 
-public class ServiceQuiz implements IServiceQuiz {
+public class ServiceQuiz implements IServiceQuiz, StatQuiz {
     private ArrayList<QuestionnaireDTO> questionnaires;
 
     public ServiceQuiz(FichierQuestionnairesBO bo) {
@@ -51,5 +52,15 @@ public class ServiceQuiz implements IServiceQuiz {
         System.out.println(quiz.fournirStatQuestion(quiz.FournirUnQuestionnaire(0).getQuestions().get(0)));
         quiz.maJStatQuestion(quiz.FournirUnQuestionnaire(0).getQuestions().get(0));
         quiz.ajouterQuestionnaire(bo, 1);
+    }
+
+    @Override
+    public int bestAnswered(int questionnaire) {
+        return 0;
+    }
+
+    @Override
+    public int worstAnswered(int questionnaire) {
+        return 0;
     }
 }
