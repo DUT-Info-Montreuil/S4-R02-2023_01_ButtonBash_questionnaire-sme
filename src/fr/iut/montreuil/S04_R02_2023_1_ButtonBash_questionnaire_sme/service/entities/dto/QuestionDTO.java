@@ -6,6 +6,24 @@ public class QuestionDTO {
     private String langue;
     private String texte;
     private String reponse;
+    private int goodAnswer;
+    private int answeredCount;
+
+    public int getGoodAnswer() {
+        return goodAnswer;
+    }
+
+    public void setGoodAnswer(int goodAnswer) {
+        this.goodAnswer = goodAnswer;
+    }
+
+    public int getAnsweredCount() {
+        return answeredCount;
+    }
+
+    public void setAnsweredCount(int answeredCount) {
+        this.answeredCount = answeredCount;
+    }
 
     public QuestionDTO (String[] tab){
         this.numero=Integer.parseInt(tab[1]);

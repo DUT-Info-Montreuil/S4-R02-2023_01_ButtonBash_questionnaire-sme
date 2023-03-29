@@ -7,6 +7,7 @@ import java.util.ArrayList;
 public class QuestionnaireDTO {
 
     private ArrayList<QuestionDTO> questions;
+    private int playCount = 0;
 
     public QuestionnaireDTO (FichierQuestionnairesBO o, int questionnaireID) {
         if(questionnaireID > o.getNbQuestionnaires() || questionnaireID < 0)
