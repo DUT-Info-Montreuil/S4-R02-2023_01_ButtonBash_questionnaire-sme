@@ -56,7 +56,7 @@ public class ServiceQuiz implements IServiceQuiz, StatQuiz {
 
     @Override
     public QuestionDTO bestAnswered(int questionnaire) {
-        QuestionDTO rep;
+        QuestionDTO rep=this.questionnaires.get(0).getQuestions().get(0);
         for(QuestionnaireDTO questionnaires : this.fournirListeQuestionnaire()){
             for (QuestionDTO questions : questionnaires.getQuestions()){
                 if (questions.getGoodAnswer()/questions.getAnsweredCount()> rep.getGoodAnswer()/rep.getAnsweredCount()){
@@ -69,7 +69,7 @@ public class ServiceQuiz implements IServiceQuiz, StatQuiz {
 
     @Override
     public QuestionDTO worstAnswered(int questionnaire) {
-        QuestionDTO rep;
+        QuestionDTO rep=this.questionnaires.get(0).getQuestions().get(0);
         for(QuestionnaireDTO questionnaires : this.fournirListeQuestionnaire()){
             for (QuestionDTO questions : questionnaires.getQuestions()){
                 if (questions.getGoodAnswer()/questions.getAnsweredCount()< rep.getGoodAnswer()/rep.getAnsweredCount()){
@@ -78,5 +78,20 @@ public class ServiceQuiz implements IServiceQuiz, StatQuiz {
             }
         }
         return rep;
+    }
+
+    public void recupereStats(){
+        int i=1;
+        QuestionDTO best;
+        QuestionDTO worst;
+        for (QuestionnaireDTO questionnaire:this.questionnaires){
+            System.out.println("statistiques du questionnaire : "+i);
+            System.out.println("le questionnaire à été joué :\n"+questionnaire.getPlayCount()+" fois");
+            best=this.bestAnswered(i-1);
+            System.out.println("la question avec le meilleur taux de réussite est : "+best.toString()+" avec "+best.getGoodAnswer()+" bonne réponses sur"+best.getAnsweredCount());
+            worst = this.worstAnswered(i-1);
+            System.out.println("la question avec le pire taux de réussite est : "+worst.toString()+" avec "+worst.getGoodAnswer()+" bonne réponses sur"+worst.getAnsweredCount());
+            i++;
+        }
     }
 }

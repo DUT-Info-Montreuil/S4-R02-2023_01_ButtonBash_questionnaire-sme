@@ -7,6 +7,15 @@ import java.util.ArrayList;
 public class QuestionnaireDTO {
 
     private ArrayList<QuestionDTO> questions;
+
+    public int getPlayCount() {
+        return playCount;
+    }
+
+    public void setPlayCount(int playCount) {
+        this.playCount = playCount;
+    }
+
     private int playCount = 0;
 
     public QuestionnaireDTO (FichierQuestionnairesBO o, int questionnaireID) {
